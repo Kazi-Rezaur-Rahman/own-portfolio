@@ -1,0 +1,453 @@
+/*=========================================================================================
+1)header
+2)About
+3)Portfolio
+4)Contact
+5)Footer
+
+========================================================================================*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+:root{
+  --primary-bg-color:#fbfbfe;
+  --secondary-bg-color:#6f5fdb;
+  --secondary-bg-color-opacity:rgba(111, 95, 219, 0.3);
+
+  --primary-font-color: #191919;
+  --secondary-font-color: #909090;
+  --button-font-color: #fff;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+html,body{
+  max-width: 1440px;
+}
+
+a{
+  text-decoration: none;
+}
+.btn{
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  background: var(--secondary-bg-color);
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.home-btn:hover,
+.btn:hover{
+  letter-spacing: 5px;
+  color: var(--primary-font-color);
+  transform: scale(1.1);
+}
+.home-btn{
+  padding: 2px 25px;
+  width: 150px;
+  border-radius: 5px;
+  background: var(--secondary-bg-color);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+.home-btn ion-icon{
+  font-size: 1.5em;
+}
+header{
+  max-width: 1440px;
+  margin: auto;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header.sticky{
+  background: var(--secondary-bg-color);
+  box-shadow: 0 3px 5px rgba(111, 95, 219, 0.7);
+}
+.logo{
+  flex-basis: 100px;
+  margin-left: 100px;
+}
+nav{
+  flex:1;
+  margin-right: 100px;
+/*  max-width: 768px;*/
+}
+.navUl{
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin-left: auto;
+}
+.navUl li{
+  list-style: none;
+  display: inline-block;
+}
+.navUl li a{
+  font-size: 1.2em;
+  padding: 0 1.5em;
+  color: var(--primary-font-color);
+  position: relative;
+}
+.navUl li a::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 3px;
+  bottom: -1em;
+  left: 0;
+  background: var(--primary-bg-color);
+  opacity: 0;
+  transition: 0.3s ease-in-out
+}
+.navUl li a:hover::after{
+  opacity: 1;
+}
+.navUl li a.active{
+  color: var(--secondary-font-color);
+}
+.burger{
+  display: none;
+}
+/*home*/
+#home{
+  max-width: 1200px;
+  margin: -72px auto 0 auto;
+  padding: 10em 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.home-details{
+  flex: 3;
+  display: flex;
+  align-items: center;
+}
+.home-details .social{
+  display: flex;
+  flex-direction: column;
+  margin: 0 2em;
+}
+.home-details .social ion-icon{
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+.home-details .details,
+.job-details{
+  margin-left: 3em;
+  line-height: 2.5em;
+}
+.home-details .details p{
+  padding: 0.5em 0;
+}
+
+.home-details .details .btn ion-icon{
+  font-size: 1.2em;
+  margin-left: 6px;
+}
+.blob{
+  width: 350px;
+  height: 300px;
+  flex: 2;
+  margin-right: 4em;
+  border: 5px solid var(--secondary-bg-color);
+  background-image: url(images/me.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.blob img,
+.about-img img{
+  width: 100%;
+}
+.scroll-down{
+  font-size: 2em;
+  position: absolute;
+  right: 48%;
+  bottom: 0;
+  left: 48%;
+}
+.arrow-footer:active{
+  color: #fff;
+}
+/*about*/
+#about{
+}
+.about-header,
+.portfolio-header,
+.Contact-header{
+  padding: 5em 0;
+  line-height: 3em;
+  text-align: center;
+}
+.about-header div,
+.portfolio-header div,
+.Contact-header div{
+  margin: auto;
+  max-width: 300px;
+  border-bottom: 5px solid var(--secondary-bg-color);
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.about-header h1{
+  letter-spacing: 3px;
+}
+.about-container{
+  max-width: 1200px;
+  margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.about-img{
+  width: 40%;
+  height: 300px;
+  margin-right: 4em;
+  border: 5px solid var(--secondary-bg-color);
+  background: url(images/me2.jpg),var(--secondary-bg-color-opacity);
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+}
+.about-details{
+  max-width: 40%;
+}
+.about-details p{
+  line-height: 2em;
+  padding: 1.5em 0;
+}
+/*portfolio*/
+
+.portfolio-container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 1em 1.5em;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 1.5em;
+}
+.portfolio-item{
+  position: relative;
+  border: 3px solid var(--secondary-bg-color);
+}
+.portfolio-item .action{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  opacity: 0;
+  transition: 0.3s ease-in-out
+}
+.portfolio-item:hover .action{
+  opacity: 1;
+}
+.portfolio-img img{
+  width: 100%;
+}
+.portfolio-item-details{
+  padding: 1em 1em 1.5em 1em;
+}
+.portfolio-item-details .btn{
+  width: 150px;
+  height: max-content;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.portfolio-item-details .btn p{
+  margin: auto;
+}
+/*contact*/
+#contact{
+  max-width: 100%;
+  padding: 5em 0;
+}
+.Contact-header{
+  padding-bottom: 0;
+}
+.Contact-header h1{
+  font-size: 2em;
+}
+.fiverr{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.job-details{
+}
+.job-details,
+.job-details h2{
+  padding-top: 1.5em;
+}
+.job-details ul li{
+  margin-left: 1em;
+}
+.hire-me{
+  align-self: flex-start;
+  padding: 4.5em 0 ;
+}
+.fiverr-gig-img{
+  padding: 0 3em;
+  grid-row: 1/3;
+}
+.fiverr-gig-img img{
+  max-width: 500px;;
+}
+.hire-me-btn{
+  display: block;
+  margin: 5em auto;
+  padding: 10px 25px;
+  width: max-content;
+  border-radius: 5px;
+  background: var(--secondary-bg-color);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+/*footer*/
+#footer{
+  padding: 3em 0 1.5em 0;
+  color: var(--primary-bg-color);
+  background: var(--secondary-bg-color);
+}
+.footer-header{
+  text-align: center;
+  padding-top: 3em;
+}
+.footer-header p{
+  padding-top: 1.2em;
+}
+#footer .social{
+  font-size: 2em;
+  text-align: center;
+  padding: 1em 0;
+}
+#footer .social ion-icon,
+#footer .social ion-icon{
+  cursor: pointer;
+  transition: 0.3s;
+}
+#footer .social ion-icon:hover,
+#footer .social ion-icon:focus{
+  color: var(--primary-font-color);
+}
+@media screen and (max-width: 950px) {
+  header{
+  }
+  header{
+    background: #66cc;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  .logo{
+    margin-left: 1em;
+    align-self: flex-start;
+  }
+
+  nav{
+  flex: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--primary-bg-color);
+  position: absolute;
+  top: 4.2em;
+  left: 50%;
+  transform: translate(-50%,0);
+    -webkit-clip-path: circle(1% at 100% -5%);
+            clip-path: circle(1% at 100% -5%);
+  z-index: -10;
+  transition: 0.3s ease-in-out;
+}
+  nav.activeNav{
+  -webkit-clip-path: circle(100% at 100% 10%);
+            clip-path: circle(100% at 100% 10%);
+  }
+  .navUl{
+    margin: 0 auto;
+  }
+  .navUl li{
+    display: block;
+    margin: 10vh 0;
+  }
+  .navUl li.active{
+    color: var(--secondary-font-color);
+  }
+  .burger{
+    display: grid;
+    place-content: center;
+    position: absolute;
+    right: 1em;
+    background: var(--secondary-bg-color);
+    width: 40px;
+    height: 30px;
+    z-index: 1000;
+  }
+  .line{
+    width: 30px;
+    height: 3px;
+    margin-top: 3px;
+    background: var(--button-font-color);
+    transition: 0.3s;
+  }
+  .burger.open div:nth-child(1){
+    transform: rotate(45deg);
+    transform-origin: 8px 5px;
+  }
+  .burger.open div:nth-child(2){
+    opacity: 0;
+  }
+  .burger.open div:nth-child(3){
+    transform: rotate(-45deg);
+    transform-origin: 8px -1px;
+  }
+  #home{
+    height: 50vh;
+  }
+  .portfolio-container{
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1.5em;
+  }
+  .fiverr{
+    flex-direction: column;
+  }
+  .job-details div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-bottom: 2em;
+  }
+  .job-details div div{
+    display: flex;
+    flex-direction: column;
+  }
+}
